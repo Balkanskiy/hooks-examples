@@ -1,5 +1,16 @@
 import React from "react";
 
-export default function IncidentDescription(props) {
-  return <h2>Hello {props.name}</h2>;
+class Greeting extends React.Component {
+  state = { name: "" };
+
+  render() {
+    return (
+      <form>
+        <h2>Hello {this.props.name}</h2>
+        <input type="text" name="name" />
+      </form>
+    );
+  }
 }
+
+export default Greeting;
