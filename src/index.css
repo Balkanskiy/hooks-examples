@@ -1,0 +1,36 @@
+:root {
+  --first-color: #f00000;
+  --second-color: #f0f0d8;
+  --third-color: #d8d8a8;
+  --fourth-color: #c0c078;
+  --fifth-color: #609000;
+}
+
+body {
+  padding: 50px;
+  background-color: var(--second-color);
+  font-family: "Roboto", sans-serif;
+}
+
+.IncidentDescription {
+  padding: 20px;
+  background-color: var(--fourth-color);
+  color: black;
+  width: 500px;
+  height: 600px;
+  display: flex;
+  flex-flow: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  display: flex;
+  justify-content: flex-start;
+}
