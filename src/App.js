@@ -1,19 +1,12 @@
 import React, { Component } from "react";
 import "./App.css";
-import IncidentDescription from "./IncidentDescription";
+import Greeting from "./Greeting";
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <IncidentDescription
-          incident={{
-            id: 246,
-            description: "Сбой в работе сервера авторизации",
-            source: "Сервер авторизации",
-            date: "14.11.18"
-          }}
-        />
+        <Greeting name={"User"} />
       </div>
     );
   }
