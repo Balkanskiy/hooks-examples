@@ -21,7 +21,7 @@ export default class IncidentDescription extends React.Component {
 
         <CopyToClipboard
           text={description}
-          onCopy={(text) => this.setState({ copied: true })}
+          onCopy={() => this.setState({ copied: true })}
         >
           <button>Copy to clipboard with button</button>
         </CopyToClipboard>
