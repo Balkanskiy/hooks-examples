@@ -5,17 +5,17 @@ export default function Greeting() {
   const [surName, setSurname] = useState("Wide");
   const [count, setCount] = useState(0);
 
+  useEffect(() => {
+    let greetings = setInterval(() => setCount(count + 1), 2000);
+    return () => clearInterval(greetings);
+  });
+
   useEffect(
     () => {
       document.title = `Greeting of ${name} ${surName}`;
     },
     [name]
   );
-
-  useEffect(() => {
-    let greetings = setInterval(() => setCount(count + 1), 2000);
-    return () => clearInterval(greetings);
-  });
 
   return (
     <form>
