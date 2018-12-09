@@ -1,9 +1,8 @@
-import React, { useReducer, useEffect } from "react";
+import React, { useReducer, useEffect, useRef } from "react";
 
 const initialState = {
   name: "World",
-  surname: "Wide",
-  count: 0
+  surname: "Wide"
 };
 
 function reducer(state, action) {
@@ -12,8 +11,6 @@ function reducer(state, action) {
       return { ...state, name: action.name };
     case "setSurname":
       return { ...state, surname: action.surname };
-    case "increment":
-      return { ...state, count: state.count + 1 };
     default:
       return state;
   }
@@ -21,22 +18,16 @@ function reducer(state, action) {
 
 export default function GreetingUsereducer() {
   const [state, dispatch] = useReducer(reducer, initialState);
+  const surnameInput = useRef(null);
 
-  useEffect(
-    () => {
-      document.title = `Greeting of ${state.name} ${state.surname}`;
-    },
-    [state.name]
-  );
   useEffect(() => {
-    let greetings = setInterval(() => dispatch({ type: "increment" }), 2000);
-    return () => clearInterval(greetings);
-  });
+    surnameInput.current.focus();
+  }, []);
 
   return (
     <form>
       <h2>
-        Hello {state.name} {state.surname}, {state.count} times!
+        Hello {state.name} {state.surname}!
       </h2>
       <label>
         Enter name:
@@ -51,6 +42,7 @@ export default function GreetingUsereducer() {
       <label>
         Enter surname:
         <input
+          ref={surnameInput}
           type="text"
           name="surName"
           onChange={event =>

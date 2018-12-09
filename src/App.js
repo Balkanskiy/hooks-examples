@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import "./App.css";
-import GreetingUsereducer from "./Greeting-usereducer";
+import Greeting from "./Greeting";
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <GreetingUsereducer name={"World"} />
+        <Greeting name={"World"} />
       </div>
     );
   }
