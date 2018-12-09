@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 
 export default function Greeting() {
-  const [name, setName] = useState("Name");
-  const [surname, setSurname] = useState("Surname");
+  const [name, setName] = useState("World");
+  const [surname, setSurname] = useState("Wide");
 
   return (
     <form>
